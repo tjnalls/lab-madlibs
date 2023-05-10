@@ -4,6 +4,19 @@
   <title>Madlib</title>
 </head>
 <body>
-  There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ people }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
+
+  There once was a {{ color }} {{ noun }} sitting in the {% if 'spikey' in word_list %}spikey {% endif %}Hackbright Lab. When {{ characteristic }} {{ people }} went to pick it up{% if 'zenith' in word_list %} in the zenith{% endif %}, it burst into flames {% if 'gorgonzola' in word_list %}of gorgonzola {% endif %}in a totally {{ adjective }} way.
+
+
+  {# 
+  {% for name in names %}
+  <input value="{{ name }}"> {{ name }}
+      {% endfor %}
+      
+      There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ characteristic }} {{ people }} went to pick it up, it burst into flames in a totally {{ adjective }} way. It was a {% for word in funky_words %} {{ word + "," }} {% endfor %}.
+
+  #}
+
+  
 </body>
 </html>

@@ -61,12 +61,39 @@ def game_choice():
 
 @app.route("/madlib")
 def madlib_fun():
+    
     color_input = request.args.get("color")
     noun_input = request.args.get("noun")
     people_input = request.args.get("people")
     adj_input = request.args.get("adjective")
+    character_input = request.args.get("quality")
+    funky_input = request.args.getlist("funkywords")
+    
+    # print(f"################## {funky_input}")
 
-    return render_template("madlib.html", color=color_input, noun=noun_input,people=people_input, adjective=adj_input)
+    # for n, value in range(len(funky_input)):
+    #     f'{funky_word}{n}' = value
+    # # for value in funky_input.values():
+        
+    # if len(funky_input) == 3:
+    #     word1 = funky_input[0]
+    #     word2 = funky_input[1]
+    #     word3 = funky_input[2]
+    # elif len(funky_input) == 2:
+    #     word1 = funky_input[0]
+    #     word2 = funky_input[1]
+    #     word3 = None
+
+
+
+    return render_template("madlib.html", 
+                           color=color_input, 
+                           noun=noun_input,
+                           people=people_input, 
+                           adjective=adj_input, 
+                           characteristic=character_input,
+                        #    word1=word1,
+                           word_list=funky_input)
 
     
 
